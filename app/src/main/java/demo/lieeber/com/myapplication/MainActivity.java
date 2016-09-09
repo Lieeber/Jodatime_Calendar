@@ -24,21 +24,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-//        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 //        recyclerView.setLayoutManager(linearLayoutManager);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,7);
-        gridLayoutManager.setSpanCount(7);
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,7);
+//        gridLayoutManager.setSpanCount(7);
 
-        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setLayoutManager(linearLayoutManager);
         final MyRecyclerViewAdapter mAdapter = new MyRecyclerViewAdapter();
         recyclerView.setAdapter(mAdapter);
-        gridLayoutManager.setSpanSizeLookup(new SpanSizeLookup() {
-            @Override public int getSpanSize(int position) {
-                mAdapter.getItem();
-                return 0;
-            }
-        });
+//        gridLayoutManager.setSpanSizeLookup(new SpanSizeLookup() {
+//            @Override public int getSpanSize(int position) {
+//                mAdapter.getItem();
+//                return 0;
+//            }
+//        });
         DateTime dateTime = new DateTime();
         DateTime startDate = dateTime.minusMonths(8);
         while (startDate.getDayOfMonth() != 1) {

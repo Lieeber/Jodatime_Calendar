@@ -63,7 +63,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     public Object getItem(int position) {
-
-        monthList.get(position);
+      return   monthList.get(position);
     }
 }
