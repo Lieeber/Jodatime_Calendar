@@ -59,8 +59,9 @@ public class LBCalendarView extends RecyclerView {
             startDate = startDate.minusDays(1);
         }
         ArrayList monthList = new ArrayList<>();
-        for (int i = 0; i < maxMonth - minMonth + 1; i++) {
-            monthList.add(new MonthModel(startDate.monthOfYear().getAsShortText()));
+        int monthSpace = (maxYear - minYear) * 12 + maxMonth - minMonth + 1;
+        for (int i = 0; i < monthSpace + 1; i++) {
+            monthList.add(new MonthModel(startDate.year().getAsShortText(), startDate.monthOfYear().getAsShortText()));
             int dayOfWeek = startDate.getDayOfWeek();
             for (int j = 1; j < dayOfWeek; j++) {
                 monthList.add(new DateTime(2000, 1, 1, 1, 1));
@@ -88,6 +89,9 @@ public class LBCalendarView extends RecyclerView {
     }
 
 
+    /**
+     * 设置需要显示的最大月份和最小月份
+     */
     public void setYearAndMonth(int minYear, int minMonth, int maxYear, int maxMonth) {
         if (minYear > maxYear) {
             Toast.makeText(getContext(), "最小年份不能大于最大年份", Toast.LENGTH_SHORT).show();

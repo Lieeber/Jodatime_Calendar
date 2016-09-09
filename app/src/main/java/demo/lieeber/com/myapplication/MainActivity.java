@@ -9,6 +9,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         LBCalendarView calendarView = (LBCalendarView) findViewById(R.id.calendar_view);
-        calendarView.setYearAndMonth(2016,1,2016,9);
+        calendarView.setYearAndMonth(2014, 1, 2016, 9);
     }
 }

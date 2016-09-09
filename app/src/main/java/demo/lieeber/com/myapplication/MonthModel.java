@@ -6,9 +6,10 @@ package demo.lieeber.com.myapplication;
 
 public class MonthModel {
     public String month;
+    public  String year;
 
-    public MonthModel(String asShortText) {
-
-        this.month = asShortText;
+    public MonthModel(String year ,String month) {
+        this.year = year;
+        this.month = month;
     }
 }

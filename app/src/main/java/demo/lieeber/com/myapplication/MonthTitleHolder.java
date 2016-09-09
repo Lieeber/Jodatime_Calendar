@@ -14,6 +14,6 @@ public class MonthTitleHolder extends ViewHolder {
     }
 
     public void setData(MonthModel monthModel) {
-        ((TextView) this.itemView).setText(monthModel.month);
+        ((TextView) this.itemView).setText(monthModel.year +"年"+ monthModel.month);
     }
 }
