@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import org.joda.time.DateTime;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by lieeber on 16/9/8.
@@ -20,7 +19,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == 0) {
-            View viewHolder = LayoutInflater.from(parent.getContext()).inflate(R.layout.monthview, parent, false);
+            View viewHolder = LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_view, parent, false);
             return new MyViewHolder(viewHolder);
         } else {
             return new MonthTitleHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.month_title, parent, false));
@@ -29,10 +28,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override public void onBindViewHolder(ViewHolder holder, int position) {
         Object itemData = monthList.get(position);
-        if (itemData instanceof List) {
-            List<DateTime> dateTimes = (List<DateTime>) itemData;
+        if (itemData instanceof DateTime) {
+            DateTime dateTime = (DateTime) itemData;
             MyViewHolder myViewHolder = (MyViewHolder) holder;
-            myViewHolder.setData(dateTimes);
+            myViewHolder.setData(dateTime);
         } else {
             MonthTitleHolder monthTitleHolder = (MonthTitleHolder) holder;
             MonthModel monthModel = (MonthModel) itemData;
@@ -54,7 +53,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     @Override public int getItemViewType(int position) {
-        if (monthList.get(position) instanceof List) {
+        if (monthList.get(position) instanceof DateTime) {
             return 0;
         } else {
             return 1;
@@ -63,6 +62,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     public Object getItem(int position) {
-      return   monthList.get(position);
+        return monthList.get(position);
     }
 }
