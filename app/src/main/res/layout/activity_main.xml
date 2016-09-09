@@ -63,8 +63,8 @@
             android:text="日"/>
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <demo.lieeber.com.myapplication.LBCalendarView
+        android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>
