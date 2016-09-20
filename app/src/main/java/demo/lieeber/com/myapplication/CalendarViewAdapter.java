@@ -5,36 +5,52 @@ import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
-import org.joda.time.DateTime;
-
 import java.util.ArrayList;
+
 
 /**
  * Created by lieeber on 16/9/8.
  */
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class CalendarViewAdapter extends RecyclerView.Adapter<ViewHolder> {
     private ArrayList monthList = new ArrayList<>();
+    private CellClickListener cellClickListener;
 
     @Override public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == 0) {
             View viewHolder = LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_view, parent, false);
-            return new MyViewHolder(viewHolder);
+            return new CellViewHolder(viewHolder);
         } else {
             return new MonthTitleHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.month_title, parent, false));
         }
     }
 
+
+    public  interface  CellClickListener{
+        void onCellClick(ScheduleDate scheduleDate);
+    }
+
+    public void  setOnCellClickListener(CellClickListener listener) {
+        this.cellClickListener = listener;
+    }
     @Override public void onBindViewHolder(ViewHolder holder, int position) {
         Object itemData = monthList.get(position);
-        if (itemData instanceof DateTime) {
-            DateTime dateTime = (DateTime) itemData;
-            MyViewHolder myViewHolder = (MyViewHolder) holder;
-            myViewHolder.setData(dateTime);
+        if (itemData instanceof ScheduleDate) {
+            final ScheduleDate scheduleDate = (ScheduleDate) itemData;
+            CellViewHolder myViewHolder = (CellViewHolder) holder;
+            myViewHolder.setData(scheduleDate);
+            myViewHolder.itemView.setOnClickListener(new OnClickListener() {
+                @Override public void onClick(View v) {
+                    if (cellClickListener != null) {
+                        cellClickListener.onCellClick(scheduleDate);
+                    }
+                }
+            });
         } else {
             MonthTitleHolder monthTitleHolder = (MonthTitleHolder) holder;
-            MonthModel monthModel = (MonthModel) itemData;
+            MonthTitleModel monthModel = (MonthTitleModel) itemData;
             monthTitleHolder.setData(monthModel);
 
         }
@@ -53,7 +69,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     @Override public int getItemViewType(int position) {
-        if (monthList.get(position) instanceof DateTime) {
+        if (monthList.get(position) instanceof ScheduleDate) {
             return 0;
         } else {
             return 1;
