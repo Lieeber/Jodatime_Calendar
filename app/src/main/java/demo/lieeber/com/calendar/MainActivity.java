@@ -1,4 +1,4 @@
-package demo.lieeber.com.myapplication;
+package demo.lieeber.com.calendar;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +9,7 @@ import org.joda.time.DateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import demo.lieeber.com.myapplication.LBCalendarView.ItemClickListener;
+import demo.lieeber.com.calendar.LBCalendarView.ItemClickListener;
 
 public class MainActivity extends AppCompatActivity {
     @Override

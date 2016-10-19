@@ -1,4 +1,4 @@
-package demo.lieeber.com.myapplication;
+package demo.lieeber.com.calendar;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;

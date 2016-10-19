@@ -1,4 +1,4 @@
-package demo.lieeber.com.myapplication;
+package demo.lieeber.com.calendar;
 
 import org.junit.Test;
 

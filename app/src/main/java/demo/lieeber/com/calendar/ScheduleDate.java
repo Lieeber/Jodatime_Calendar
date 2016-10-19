@@ -1,4 +1,4 @@
-package demo.lieeber.com.myapplication;
+package demo.lieeber.com.calendar;
 
 import org.joda.time.DateTime;
 import org.joda.time.Days;
