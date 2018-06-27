@@ -1,4 +1,4 @@
-package demo.lieeber.com.calendar;
+package com.lieeber.library;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import demo.lieeber.com.calendar.CalendarViewAdapter.CellClickListener;
 import rx.Observable;
 import rx.Observable.OnSubscribe;
 import rx.Subscriber;
@@ -89,7 +88,7 @@ public class LBCalendarView extends RecyclerView {
             }
         });
 
-        mAdapter.setOnCellClickListener(new CellClickListener() {
+        mAdapter.setOnCellClickListener(new CalendarViewAdapter.CellClickListener() {
             @Override public void onCellClick(ScheduleDate scheduleDate) {
                 if (itemClickListener != null) {
                     itemClickListener.onItemClick(scheduleDate);

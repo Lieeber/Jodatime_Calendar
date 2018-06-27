@@ -4,12 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.lieeber.library.LBCalendarView;
+import com.lieeber.library.ScheduleDate;
+
 import org.joda.time.DateTime;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import demo.lieeber.com.calendar.LBCalendarView.ItemClickListener;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         dateTime = new DateTime(2018, 11, 22, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 0));
         calendarView.setCalendarData(dateList);
-        calendarView.setItemClickListener(new ItemClickListener() {
+        calendarView.setItemClickListener(new LBCalendarView.ItemClickListener() {
             @Override public void onItemClick(ScheduleDate scheduleDate) {
                 if (scheduleDate.isSelected && scheduleDate.todoCount > 0) {
                     Toast.makeText(MainActivity.this, "有课", Toast.LENGTH_SHORT).show();

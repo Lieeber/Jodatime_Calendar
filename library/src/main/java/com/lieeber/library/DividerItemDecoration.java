@@ -1,4 +1,4 @@
-package demo.lieeber.com.calendar;
+package com.lieeber.library;
 
 import android.content.Context;
 import android.graphics.Canvas;
