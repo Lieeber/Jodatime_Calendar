@@ -32,19 +32,19 @@ public class MainActivity extends AppCompatActivity {
         dateTime = new DateTime(2018, 7, 11, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 1));
 
-        dateTime = new DateTime(2018, 8, 9, 0, 0);
+        dateTime = new DateTime(2018, 7, 9, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 1));
 
-        dateTime = new DateTime(2018, 9, 10, 0, 0);
+        dateTime = new DateTime(2018, 7, 10, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 1));
 
-        dateTime = new DateTime(2018, 10, 3, 0, 0);
+        dateTime = new DateTime(2018, 7, 3, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 0));
-        dateTime = new DateTime(2018, 10, 7, 0, 0);
+        dateTime = new DateTime(2018, 7, 7, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 2));
-        dateTime = new DateTime(2018, 10, 8, 0, 0);
+        dateTime = new DateTime(2018, 7, 8, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 3));
-        dateTime = new DateTime(2018, 10, 10, 0, 0);
+        dateTime = new DateTime(2018, 7, 10, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 4));
 
 
