@@ -17,37 +17,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         LBCalendarView calendarView = (LBCalendarView) findViewById(R.id.calendar_view);
-        calendarView.setYearAndMonth(2016, 8, 2016, 12);
+        calendarView.setYearAndMonth(2018, 6, 2018, 12);
         calendarView.plusPreMonth(10);
 
         List<ScheduleDate> dateList = new ArrayList<>();
 
-        DateTime dateTime = new DateTime(2016, 8, 1, 0, 0);
+        DateTime dateTime = new DateTime(2018, 6, 1, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 1));
 
-        dateTime = new DateTime(2016, 8, 7, 0, 0);
+        dateTime = new DateTime(2018, 6, 7, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 0));
 
-        dateTime = new DateTime(2016, 8, 11, 0, 0);
+        dateTime = new DateTime(2018, 7, 11, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 1));
 
-        dateTime = new DateTime(2016, 9, 9, 0, 0);
+        dateTime = new DateTime(2018, 8, 9, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 1));
 
-        dateTime = new DateTime(2016, 9, 10, 0, 0);
+        dateTime = new DateTime(2018, 9, 10, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 1));
 
-        dateTime = new DateTime(2016, 10, 3, 0, 0);
+        dateTime = new DateTime(2018, 10, 3, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 0));
-        dateTime = new DateTime(2016, 10, 7, 0, 0);
+        dateTime = new DateTime(2018, 10, 7, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 2));
-        dateTime = new DateTime(2016, 10, 8, 0, 0);
+        dateTime = new DateTime(2018, 10, 8, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 3));
-        dateTime = new DateTime(2016, 10, 10, 0, 0);
+        dateTime = new DateTime(2018, 10, 10, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 4));
 
 
-        dateTime = new DateTime(2016, 11, 22, 0, 0);
+        dateTime = new DateTime(2018, 11, 22, 0, 0);
         dateList.add(new ScheduleDate(dateTime, true, 0));
         calendarView.setCalendarData(dateList);
         calendarView.setItemClickListener(new ItemClickListener() {
